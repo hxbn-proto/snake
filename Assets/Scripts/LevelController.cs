@@ -7,9 +7,9 @@ public class LevelController : MonoBehaviour
     [SerializeField] private FoodSpawner foodSpawner;
     private List<GameObject> food = new List<GameObject>();
 
-    internal void SpawnFood(Vector2 avoid)
+    internal void SpawnFood()
     {
-        food.Add(foodSpawner.spawnFood(avoid));
+        food.Add(foodSpawner.spawnFood());
     }
 
     internal void Reset()

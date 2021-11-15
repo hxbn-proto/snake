@@ -16,18 +16,24 @@ public class GameController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space)) {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
             player.Run();
         }
     }
 
-    internal void PlayerFails() {
+    internal void PlayerFails()
+    {
         Reset();
     }
 
-    internal void PlayerSucceed() {
+    internal void PlayerSucceed()
+    {
+        SetScore(score += 100);
+
         player.Grow();
         level.Reset();
+        level.SpawnFood();
     }
 
     private void Reset()
@@ -36,12 +42,13 @@ public class GameController : MonoBehaviour
         level.Reset();
         ResetScore();
 
-        level.SpawnFood(player.HeadPosition());
+        level.SpawnFood();
     }
 
     private void ResetScore()
     {
-        SetScore(0);
+        score = 0;
+        SetScore(score);
     }
 
     private void SetScore(int newScore)

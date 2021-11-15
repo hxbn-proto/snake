@@ -6,7 +6,7 @@ public class FoodSpawner : MonoBehaviour
     [SerializeField] private GameObject food;
     [SerializeField] private float spawnBounds;
 
-    internal GameObject spawnFood(Vector2 avoidLocation)
+    internal GameObject spawnFood()
     {
         float maxCoord = spawnBounds;
         float minCoord = spawnBounds * -1;
